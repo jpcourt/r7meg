@@ -2,6 +2,7 @@
 	"offerList" : [
 		{
 			"vector" : "tnt",
+			"typeMa" : 24,
 			"productList" : [
 				{
 					"code" : "2003",
@@ -43,6 +44,7 @@
 		},
 		{
 			"vector" : "fibre",
+			"typeMa" : 86,
 			"productList": [
 				{
 					"code" : "6100",

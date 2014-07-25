@@ -1,16 +1,14 @@
-function generateMeg(vector){
+function generateMeg(vector, typeMa){
 
 	var msd = document.getElementById('msd').value;
-	//var product = document.getElementById('product').value;
 
 	var productArray = selectedProductList();
-	// Fonction pour 
 
 	if( msd == "" ){
 
 		document.getElementById('megResult').innerHTML = '<pre>Merci de remplir MSD et Produit</pre>';
 
-	}else if( msd < 10000000000 || msd > 99999999999 || isNaN(msd) ){
+	}else if( msd < typeMa*1000000000 || msd >= (typeMa+1)*1000000000 || isNaN(msd) ){
 
 		document.getElementById('megResult').innerHTML = '<pre>Format de MSD non conforme</pre>';
 
@@ -23,16 +21,6 @@ function generateMeg(vector){
 				if (xhr.status == 200) {
 					var meg = xhr.response;
 					var compiledMeg = _.template(meg);
-					var typeMa;
-					if(vector == "tnt"){ 
-						typeMa = 24;
-					}else if(vector == "fibre"){
-						typeMa = 86; 
-					}else if(vector == "sat"){
-						typeMa = 18;
-					}else{ 
-						typeMa = 99;
-					}
 					var megData = {"vector" : vector, "typeMa" : typeMa, 'productArray' : productArray, 'msd' : msd };
 					var xmlMeg = compiledMeg(megData);
 					var txtMeg = xmlMeg.replace(/</mg, "&lt").replace(/>/mg, "&gt")

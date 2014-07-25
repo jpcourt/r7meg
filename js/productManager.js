@@ -1,8 +1,9 @@
 var products;
+var typeMa;
 
 function displayProducts(vector){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'offerConfig.json');
+	xhr.open('GET', 'offers/offerConfig.json');
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
@@ -10,6 +11,7 @@ function displayProducts(vector){
 				offerConfig['offerList'].forEach(function(offerItem){
 					if(offerItem['vector'] == vector){
 						products = offerItem['productList'];
+						typeMa = offerItem['typeMa'];
 					}
 				});
 				updateProducts(vector);
@@ -36,7 +38,7 @@ function displayInterface(vector){
 	displayProducts(vector);
 
 	var buttonDisplay = "<button class='btn btn-success btn-lg' type='submit' ";
-	buttonDisplay += "onclick='generateMeg("+JSON.stringify(vector)+"), displaySelectedProducts()'>"; 
+	buttonDisplay += "onclick='generateMeg("+JSON.stringify(vector)+", "+typeMa+"), displaySelectedProducts()'>"; 
 	buttonDisplay += "Générer MEG "+vector+"</button>";
 	document.getElementById('generateButton').innerHTML = buttonDisplay;
 	document.getElementById('selectorName').innerHTML = 'Vecteur : '+vector;
