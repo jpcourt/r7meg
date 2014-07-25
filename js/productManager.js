@@ -2,7 +2,7 @@ var products;
 
 function displayProducts(vector){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'offers/offerConfig.json');
+	xhr.open('GET', 'offerConfig.json');
 	xhr.onreadystatechange = function(aEvt) {
 		if (xhr.readyState == 4) {
 			if (xhr.status == 200) {
