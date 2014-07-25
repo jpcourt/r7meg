@@ -31,7 +31,7 @@
 			<destinataireElem>
 				<canal.det.modele.gestion.Ma>
 					<typeMa>
-						<font color=red><b><%= typeMa %>/b></font>
+						<font color=red><b><%= typeMa %></b></font>
 					</typeMa>
 					<idMateriel>
 						<font color=red><b><%= msd %></b></font>
