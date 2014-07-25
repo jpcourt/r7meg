@@ -31,16 +31,17 @@ function updateProducts(vector){
 	productDisplay += "</div>";
 	productDisplay += "<div><button class='btn btn-default' onclick='resetProducts("+JSON.stringify(vector)+")'>Reset</button></div>";
 	document.getElementById('productList').innerHTML = '<div>'+productDisplay+'</div>';
+
+	var buttonDisplay = "<button class='btn btn-success btn-lg' type='submit' ";
+	buttonDisplay += "onclick='generateMeg("+JSON.stringify(vector)+", "+typeMa+"), displaySelectedProducts()'>"; 
+	buttonDisplay += "Générer MEG "+vector+"</button>";
+	document.getElementById('generateButton').innerHTML = buttonDisplay;
 }
 
 function displayInterface(vector){
 	
 	displayProducts(vector);
 
-	var buttonDisplay = "<button class='btn btn-success btn-lg' type='submit' ";
-	buttonDisplay += "onclick='generateMeg("+JSON.stringify(vector)+", "+typeMa+"), displaySelectedProducts()'>"; 
-	buttonDisplay += "Générer MEG "+vector+"</button>";
-	document.getElementById('generateButton').innerHTML = buttonDisplay;
 	document.getElementById('selectorName').innerHTML = 'Vecteur : '+vector;
 	document.getElementById('products').value = "";
 	document.getElementById('megResult').innerHTML = "\n";

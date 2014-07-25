@@ -8,7 +8,7 @@ function generateMeg(vector, typeMa){
 
 		document.getElementById('megResult').innerHTML = '<pre>Merci de remplir MSD et Produit</pre>';
 
-	}else if( msd < typeMa*1000000000 || msd >= (typeMa+1)*1000000000 || isNaN(msd) ){
+	}else if( msd < (typeMa*1000000000) || msd >= ((typeMa+1)*1000000000) || isNaN(msd) ){
 
 		document.getElementById('megResult').innerHTML = '<pre>Format de MSD non conforme</pre>';
 
