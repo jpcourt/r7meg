@@ -23,8 +23,8 @@ function displayVectorSelector(){
 	selectorButton += "<p id='selectorName'></p><span class='caret'></span></button>";
 	selectorButton += "<ul class='dropdown-menu text-center' role='menu'>";
 	offerConfig['offerList'].forEach(function(offer){
-		selectorButton += "<li onclick='displayInterface("+JSON.stringify(offer['vector']+")'><a href='#'>TNT</a></li>";
-	})				
+		selectorButton += "<li onclick='displayInterface("+JSON.stringify(offer['vector'])+")'><a href='#'>Choisir "+offer['vector']+"</a></li>";
+	});
 	selectorButton += "</ul>";
 	document.getElementById('vectorSelector').innerHTML = selectorButton;
 }
