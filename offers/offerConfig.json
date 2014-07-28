@@ -59,6 +59,20 @@
 					"label" : "Panorama"
 				}
 			]
+		},
+		{
+			"vector" : "sat",
+			"typeMa" : 18,
+			"productList": [
+				{
+					"code" : "xxxx",
+					"label" : "Dummy Offer 1"
+				},
+				{
+					"code" : "yyyy",
+					"label" : "Dummy Offer 2"
+				}
+			]
 		}
 	]
 }

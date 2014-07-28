@@ -1,0 +1,22 @@
+<dummy.template>
+	<text>
+		Ceci est un dummy template
+	</text>
+	<typeMa>
+		<font color=red><b><%= typeMa %></b></font>
+	</typeMa>
+	<idMateriel>
+		<font color=red><b><%= msd %></b></font>
+	</idMateriel>
+	<products>
+		<% _.each(productArray, function(product) { %>
+			<offre>
+				<vecteur>13</vecteur>
+				<operateurCommercial>CSA</operateurCommercial>
+				<idOffreDroits>
+					<font color=red><b><%= product %></b></font>
+				</idOffreDroits>
+			</offre>
+		<% }); %>
+	</products>
+</dummy.template>
